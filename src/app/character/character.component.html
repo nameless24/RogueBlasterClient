@@ -1,0 +1,39 @@
+<div class="margin-auto mybodylogin">
+  <div class="homepadding">
+    <div class="my-container">
+      <div style="width: 50%;min-height:250px; padding: 12px;float: left;">
+        <div style="width: 100%; font-size: 14px; text-align: left;">
+          <h3 style="text-align: center">{{character.name}}</h3>
+        </div>
+        <span *ngIf="character.identifyCharJSON=='1'"><img
+          src="https://media.giphy.com/media/jUv7v9vedctWZbnkhn/giphy.gif"
+          style="margin-top: 13px;width: 40%; background: #ffffff; border: 2px solid #000000; border-radius: 20px;"/></span>
+        <span *ngIf="character.identifyCharJSON=='2'"><img
+          src="https://media.giphy.com/media/6begFPiIVsnWOs2hbf/giphy.gif"
+          style="margin-top: 13px;width: 40%; background: #ffffff; border: 2px solid #000000; border-radius: 20px;"/></span>
+        <span *ngIf="character.identifyCharJSON=='3'"><img
+          src="https://media.giphy.com/media/8dVb4oNrgNuRqm7Dbb/giphy.gif"
+          style="margin-top: 13px;width: 40%; background: #ffffff; border: 2px solid #000000; border-radius: 20px;"></span>
+      </div>
+      <div style="float: left; width: 50%; text-align: left;padding: 12px 90px 12px 12px;">
+        <h3 style="text-align: center">STATISTICHE</h3>
+        <br/>
+        <span style="font-weight: 600">Classe: </span>
+        <span *ngIf="character.identifyCharJSON=='1'" style="float: right;">Knight</span>
+        <span *ngIf="character.identifyCharJSON=='2'" style="float: right;">Rogue</span>
+        <span *ngIf="character.identifyCharJSON=='3'" style="float: right;">Novice</span>
+        <br/>
+        <span style="font-weight: 600">Forza: </span><span style="float: right;"
+                                                           id="strIndicator">{{character.str}}</span><br>
+        <span style="font-weight: 600">Agilità: </span><span style="float: right;"
+                                                             id="agiIndicator">{{character.agi}}</span><br>
+        <span style="font-weight: 600">HP: </span><span style="float: right;"
+                                                        id="vitIndicator">{{character.vit}}</span><br>
+        <span style="font-weight: 600">Fortuna: </span><span style="float: right;"
+                                                             id="lckIndicator">{{character.lck}}</span>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <a class="playbtn" style="font-size: 15px;padding: 12px 20px;margin: 0 auto;" routerLink="/game">Continua...</a>
+  </div>
+</div>

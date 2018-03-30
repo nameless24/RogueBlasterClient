@@ -1,0 +1,247 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+nav{
+  border: 1px solid black;
+  width: 100%;
+  background-color: #2A2A2A;
+  margin-bottom: 50px;
+}
+
+nav a{
+  color: white;
+
+}
+
+nav a:hover{
+
+  color: #2A2A2A;
+}
+
+nav .navCont{
+  width: 25%;
+  float: left;
+  padding: 8px;
+}
+
+nav .navCont:hover{
+  background-color: #C3C3C3;
+}
+
+.background{
+  background-image: url("https://wallpapersfind.com/wp-content/uploads/2017/10/dragon-fantasy-wallpaper.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-top: 15px;
+
+}
+
+.backgroundNav{
+  background-image: url("https://i.imgur.com/T5nEJb3.jpg");
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150px;
+}
+
+.logotop h1{
+  font-family: 'Pridi', serif;
+  font-size: 8em;
+  color: black;
+  width: 100%;
+}
+
+.bordlogo{
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.contain{
+  width: 60%;
+}
+
+.txt-center{
+  text-align: center;
+}
+
+.margin-auto{
+  margin:auto;
+}
+
+.mybodylogin {
+  border: 1px solid black;
+  background-color: #2A2A2A;
+  color: white;
+  padding: 20px;
+  min-height: 360px;
+}
+
+.mybodylogin h2{
+  margin-bottom: 30px;
+}
+
+.bgfoot{
+  background-color: #2A2A2A;
+  margin-top: 70px;
+  border: 1px solid black;
+  background-image: url("https://preview.ibb.co/k9QKUc/dragon.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: white;
+  padding: 10px;
+  bottom: 0px;
+}
+
+
+.footerleft.col-lg-6.col-md-6.col-sm-12.col-sx-12 {
+  float: left;
+}
+
+.footerleft h3{
+
+}
+
+.footerright.col-lg-6.col-md-6.col-sm-12.col-sx-12 {
+  float: left;
+
+}
+
+.mybodylogin .playbtn{
+  color: white;
+  background-color: black;
+  width: 70%;
+  padding: 30px;
+  text-align: center;
+  font-size: 8em;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.mybodylogin .playbtn:hover{
+  text-decoration: none;
+  color: black!important;
+  background-color: white;
+}
+
+.homepadding a{
+  padding: 10px;
+  margin: auto;
+  width: 100%;
+}
+
+.col-lg-4.col-md-4.col-sm-12.col-sx-12 {
+  float: left;
+}
+
+a .col-sm-12.col-sx-12{
+  margin-bottom: 10px;
+}
+
+.btnsize{
+  width: 100%;
+  margin: auto;
+  text-align: center;
+
+}
+
+.easybtn{
+  background-color: green;
+  color: white;
+  margin: auto;
+  font-size: 2em;
+  width: 60%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.easybtn:hover{
+  box-shadow: 0 0 0 3px #fff inset;
+}
+
+.medbtn{
+  background-color: orange;
+  color: white;
+  width: 60%;
+  margin: auto;
+  font-size: 2em;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+
+}
+
+.medbtn:hover{
+  box-shadow: 0 0 0 3px #fff inset;
+}
+
+.hardbtn{
+  background-color: red;
+  color: white;
+  width: 60%;
+  margin: auto;
+  font-size: 2em;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.hardbtn:hover{
+  box-shadow: 0 0 0 3px #fff inset;
+}
+
+.btnsize a:hover{
+  text-decoration: none;
+}
+
+
+.charpage h2{
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.charbox1{
+  border-bottom: 1px solid white;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+
+}
+
+
+/*SOCIAL ICONS FOOTER*/
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+
+.fa:hover {
+  color: #C3C3C3;
+}
+
+.fa-facebook {
+  color: white;
+}
+
+.fa-twitter {
+  color: white;
+}
+
+.fa-google {
+  color: white;
+}
+
+.fa-instagram {
+  color: white;
+}
+
+/*SOCIAL ICONS FOOTER ENDS*/
+

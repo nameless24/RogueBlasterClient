@@ -1,0 +1,40 @@
+ <div class="mybodylogin">
+   <h2>Registrati</h2>
+  <form (ngSubmit)="register()">
+
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input class="form-control" id="Nome" name="Nome"
+             [(ngModel)]="user.nome" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Cognome</label>
+      <input class="form-control" id="Cognome" name="Cognome"
+             [(ngModel)]="user.cognome" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Username</label>
+      <input class="form-control" id="Username" name="Username"
+             [(ngModel)]="user.username" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Email</label>
+      <input class="form-control" id="Email" name="Email"
+             [(ngModel)]="user.email" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nome">Password</label>
+      <input class="form-control" id="Password" name="Password"
+             [(ngModel)]="user.password" required>
+    </div>
+
+
+
+    <button class="btn btn-success save">Submit</button>
+
+  </form>
+ </div>

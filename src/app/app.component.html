@@ -1,0 +1,44 @@
+<div class="backgroundNav bordlogo">
+  <div class="logotop">
+    <img style="width: 85%; margin: 25px auto;" src="https://i.imgur.com/d4P7CyU.png"/>
+  </div>
+</div>
+<nav>
+  <a routerLink="/home">
+  <div class="navCont">
+    Homepage
+  </div>
+  </a>
+  <a routerLink="/personaggi">
+    <div class="navCont">
+      Personaggi
+    </div>
+  </a>
+  <a routerLink="/mappe">
+    <div class="navCont">
+      Mappe
+    </div>
+  </a>
+  <a (click)="logout()" style="color:white;">
+    <div class="navCont">
+      Logout
+    </div>
+  </a>
+  <div class="clearfix"></div>
+</nav>
+<router-outlet></router-outlet>
+<footer class="margin-auto bgfoot">
+  <div class="footerleft col-lg-6 col-md-6 col-sm-12 col-sx-12">
+    <h3>RogueBlaster</h3>
+    <p><i>Developed by Consoft</i></p>
+  </div>
+  <div class="footerright col-lg-6 col-md-6 col-sm-12 col-sx-12">
+    <div class="social">
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-google"></a>
+      <a href="#" class="fa fa-instagram"></a>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</footer>
