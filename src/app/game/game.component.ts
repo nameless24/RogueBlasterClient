@@ -17,6 +17,7 @@ export class GameComponent implements OnInit {
   characterY: number;
   enemiesCoords: number[][];
   chestsCoords: number[][];
+  logAttacks: string[];
 
   canvas: HTMLCanvasElement;
   ctx: CanvasRenderingContext2D;
@@ -31,6 +32,10 @@ export class GameComponent implements OnInit {
   agiIndicator: HTMLSpanElement;
   vitIndicator: HTMLSpanElement;
   lckIndicator: HTMLSpanElement;
+
+  attackLog1: HTMLSpanElement;
+  attackLog2: HTMLSpanElement;
+  attackLog3: HTMLSpanElement;
 
   private FPS = 30;
 
@@ -52,6 +57,7 @@ export class GameComponent implements OnInit {
     this.enemiesCoords = temp.enemiesCoords;
     this.chestsCoords = temp.chestsCoords;
     this.turn = -1;
+    this.logAttacks = ['', '', ''];
   }
 
   ngOnInit() {
@@ -64,6 +70,9 @@ export class GameComponent implements OnInit {
     this.agiIndicator = <HTMLSpanElement>document.getElementById('agiIndicator');
     this.vitIndicator = <HTMLSpanElement>document.getElementById('vitIndicator');
     this.lckIndicator = <HTMLSpanElement>document.getElementById('lckIndicator');
+    this.attackLog1 = <HTMLSpanElement>document.getElementById('attackLog1');
+    this.attackLog2 = <HTMLSpanElement>document.getElementById('attackLog2');
+    this.attackLog3 = <HTMLSpanElement>document.getElementById('attackLog3');
     document.addEventListener('keydown', this.keyboardInput.bind(this));
     this.ctx = this.canvas.getContext('2d');
     this.gameLoop();
@@ -128,6 +137,7 @@ export class GameComponent implements OnInit {
     //sinistra
     if (event.keyCode == 37 || event.keyCode == 65) {
       this.move(-1, 0);
+      if (this.res == 2 || this.res == 1) this.updateLogAttacks('Attacco !');
       if (this.res != -1) {
         this.afterMove(this.characterX, this.characterY);
       }
@@ -135,6 +145,7 @@ export class GameComponent implements OnInit {
     //su
     else if (event.keyCode == 38 || event.keyCode == 87) {
       this.move(0, -1);
+      if (this.res == 2 || this.res == 1) this.updateLogAttacks('Attacco !');
       if (this.res != -1) {
         this.afterMove(this.characterX, this.characterY);
       }
@@ -142,6 +153,7 @@ export class GameComponent implements OnInit {
     //destra
     else if (event.keyCode == 39 || event.keyCode == 68) {
       this.move(1, 0);
+      if (this.res == 2 || this.res == 1) this.updateLogAttacks('Attacco !');
       if (this.res != -1) {
         this.afterMove(this.characterX, this.characterY);
       }
@@ -149,14 +161,14 @@ export class GameComponent implements OnInit {
     //giù
     else if (event.keyCode == 40 || event.keyCode == 83) {
       this.move(0, 1);
-      if (this.res != -1 ) {
+      if (this.res == 2 || this.res == 1) this.updateLogAttacks('Attacco !');
+      if (this.res != -1) {
         this.afterMove(this.characterX, this.characterY);
       }
     }
     this.c++;
     console.log('-----FINE TURNO ' + this.c + '-----');
   }
-
 
 
   private afterMove(newX: number, newY: number) {
@@ -199,18 +211,19 @@ export class GameComponent implements OnInit {
       console.log('il nemico ' + i + ' vuole muoversi: ' + x + ' ' + y);
       this.turn = this.map.moveEnemy(x, y, this.enemiesCoords[i][0], this.enemiesCoords[i][1]);
       if (this.turn == 0) {
-        console.log('cambio Cordinate IBAN');
         this.enemiesCoords[i][0] = x;
         this.enemiesCoords[i][1] = y;
       } else if (this.turn == 2 && this.map.enemyAttacked) {
         this.map.enemyAttacked = !this.map.enemyAttacked;
       }
+      if(this.turn == 2 || this.turn == 1) this.updateLogAttacks('Il nemico ha attaccato!');
       this.turn = -1;
     }
     if (!this.map.mainAlive) {
       localStorage.setItem('hideNavbar', '1');
       document.clear();
       localStorage.removeItem('game');
+      localStorage.removeItem('logAttacks');
       this.ctx.restore();
       return this.router.navigate(['gameover']);
     }
@@ -218,6 +231,7 @@ export class GameComponent implements OnInit {
       localStorage.setItem('hideNavbar', '1');
       document.clear();
       localStorage.removeItem('game');
+      localStorage.removeItem('logAttacks');
       this.ctx.restore();
       return this.router.navigate(['win']);
     }
@@ -240,5 +254,15 @@ export class GameComponent implements OnInit {
       this.characterX = newX;
       this.characterY = newY;
     }
+  }
+
+  updateLogAttacks(s: string) {
+    this.logAttacks[0]=this.logAttacks[1];
+    this.logAttacks[1]=this.logAttacks[2];
+    this.logAttacks.pop();
+    this.logAttacks.push(s);
+      this.attackLog1.innerText = this.logAttacks[2];
+      this.attackLog2.innerText = this.logAttacks[1];
+      this.attackLog3.innerText = this.logAttacks[0];
   }
 }
